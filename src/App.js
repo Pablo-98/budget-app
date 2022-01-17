@@ -18,7 +18,12 @@ import BudgetCard from './components/BudgetCard';
          alignItems: "flex-start",
         }}
         >
-          <BudgetCard name="Entertainment" amount="250" max="1000"> </BudgetCard>
+          <BudgetCard
+           name="Entertainment" 
+           gray
+           amount="250"
+            max="1000"
+            ></BudgetCard>
         </div>
       </Container>
   )
