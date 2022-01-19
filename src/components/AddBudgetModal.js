@@ -1,7 +1,8 @@
 import { Form, Modal, Button } from 'react-bootstrap'
 
 
-export default function AddBudgetModal() {
+export default function AddBudgetModal({show, handleClose}) {
+    function handleSubmit(e) {}
     return (
      <Modal show ={show} onHide={handleClose}>
          <Form onSubmit ={handleSubmit}>
