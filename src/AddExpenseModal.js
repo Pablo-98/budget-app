@@ -1,6 +1,6 @@
 import { Form, Modal, Button } from 'react-bootstrap'
 import { useRef } from 'react'
-import { useBudgets } from './contexts/BudgetsContext'
+import { useBudgets } from './components/contexts/BudgetsContext'
 import { UNCATEGORIZED_BUDGET_ID } from './components/contexts/BudgetsContext'
 
 
