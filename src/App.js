@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Stack } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container'
 import AddBudgetModal from './components/AddBudgetModal';
@@ -9,8 +9,22 @@ import TotalBudgetCard from './components/UncategorizedBudgetCard'
 import BudgetCard from './components/BudgetCard';
 import { useBudgets } from './components/contexts/BudgetsContext'
 import { UNCATEGORIZED_BUDGET_ID } from './components/contexts/BudgetsContext';
+import '../src/App.css'
 
  function App() {
+  // setting up light/dark mode for app 8-24-22
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
    const [showAddBudgetModal, setShowAddBudgetModal] = useState(false)
    const [showAddExpenseModal, setShowAddExpenseModal] = useState(false)
    const [ViewExpensesModalBudgetId, setViewExpensesModalBudgetId] = useState()
@@ -27,6 +41,12 @@ import { UNCATEGORIZED_BUDGET_ID } from './components/contexts/BudgetsContext';
   <Container className="my-4" >
     <Stack direction="horizontal" gap="2" className="mb-4">
       <h1 className="me-auto">Budgets</h1>
+      
+      <div className={`App ${theme}`}>
+        <button onClick={toggleTheme}> Toggle Theme</button>
+        
+      </div>
+
       <Button variaint="primary" onClick={() => setShowAddBudgetModal(true)}>Add Budget</Button>
       <Button variaint="outline-primary" onClick={openAddExpenseModal} >Add Expense</Button>
       </Stack>
@@ -77,6 +97,7 @@ import { UNCATEGORIZED_BUDGET_ID } from './components/contexts/BudgetsContext';
          budgetId={ViewExpensesModalBudgetId}
         handleClose={() => setViewExpensesModalBudgetId()} 
        />
+       <div id="image" > </div>
       </>
 
   )
