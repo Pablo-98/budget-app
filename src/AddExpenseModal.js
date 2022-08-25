@@ -25,15 +25,15 @@ export default function AddExpenseModal({show, handleClose, defaultBudgetId}) {
      <Modal show ={show} onHide={handleClose}>
          <Form onSubmit ={handleSubmit}>
              <Modal.Header closeButton> 
-             <Modal.Title>New Expense</Modal.Title>
+             <Modal.Title id="modal-title">New Expense</Modal.Title>
              </Modal.Header>
              <Modal.Body>
                  <Form.Group  className="mb-3" controlId="description">
-                     <Form.Label> Description </Form.Label>
+                     <Form.Label id="form-label"> Description </Form.Label>
                      <Form.Control ref={descriptionRef} type="text" required />
                  </Form.Group>
                  <Form.Group  className="mb-3" controlId="amount">
-                     <Form.Label> Amount</Form.Label>
+                     <Form.Label id="form-label"> Amount</Form.Label>
                      <Form.Control
                       ref={amountRef} 
                       type="number" 
@@ -41,7 +41,7 @@ export default function AddExpenseModal({show, handleClose, defaultBudgetId}) {
                        step={0.01} />
                  </Form.Group>
                  <Form.Group  className="mb-3" controlId="budgetId">
-                     <Form.Label> Budget</Form.Label>
+                     <Form.Label id="form-label"> Budget</Form.Label>
                      <Form.Select
                      defaultValue ={defaultBudgetId}
                       ref={budgetIdRef}>
