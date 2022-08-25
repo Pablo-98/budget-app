@@ -40,14 +40,14 @@ import '../src/App.css'
     <>
   <Container className="my-4" >
     <Stack direction="horizontal" gap="2" className="mb-4">
-      <h1 className="me-auto">Budgets</h1>
+      <h1 id="budget-title" className="me-auto">Budgets</h1>
       
       <div className={`App ${theme}`}>
         <button onClick={toggleTheme}> Toggle Theme</button>
         
       </div>
 
-      <Button variaint="primary" onClick={() => setShowAddBudgetModal(true)}>Add Budget</Button>
+      <Button  variaint="primary" onClick={() => setShowAddBudgetModal(true)}>Add Budget</Button>
       <Button variaint="outline-primary" onClick={openAddExpenseModal} >Add Expense</Button>
       </Stack>
       <div 
