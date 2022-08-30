@@ -19,11 +19,12 @@ export default function BudgetCard({
         classNames.push("bg-light")
     }
     return (
+        // need to change card-title color to blue 
     <Card className={classNames.join(" ")}>
         <Card.Body>
-            <Card.Title className = "d-flex justify-content-between align-items-baseline fw-normal mb-3"> 
-              <div className="me-2"> {name} </div>
-              <div className="d-flex align"> 
+            <Card.Title className = "d-flex justify-content-between align-items-baseline fw-normal mb-3 "> 
+              <div id="card-name" className="me-2"> {name} </div>
+              <div id="card-amount" className="d-flex align"> 
                   {currencyFormatter.format(amount)}
                   {max && (
 

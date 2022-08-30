@@ -17,7 +17,7 @@ const budget = UNCATEGORIZED_BUDGET_ID === budgetId
              <Modal.Header closeButton> 
              <Modal.Title> 
                  <Stack direction="horizontal" gap="2">
-                     <div> Expenses - {budget?.name} </div>
+                     <div id="card-name"> Expenses - {budget?.name} </div>
                      {budgetId !== UNCATEGORIZED_BUDGET_ID && (
                          <Button onClick={() => {
                              deleteBudget(budget)
@@ -34,8 +34,8 @@ const budget = UNCATEGORIZED_BUDGET_ID === budgetId
                  <Stack direction="vertical" gap="3">
                      {expenses.map(expense => (
                          <Stack direction="horizontal" gap= "2" key ={expense.id}>
-                         <div className="me-auto fs-4"> {expense.description}</div>
-                         <div className="fs-5"> {currencyFormatter.format(expense.amount)}
+                         <div id="card-name" className="me-auto fs-4"> {expense.description}</div>
+                         <div id="card-name" className="fs-5"> {currencyFormatter.format(expense.amount)}
                          </div>
                          <Button 
                          onClick={() => deleteExpense(expense)} 
